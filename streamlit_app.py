@@ -34,14 +34,14 @@ try:
   else:
     # streamlit.write('The user entered ', fruit_choice)
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-  # streamlit.text(fruityvice_response.json())
-  # take json verison of the response and normalize it
-  fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-  # output result as a table 
-  streamlit.dataframe(fruityvice_normalized)
+    # streamlit.text(fruityvice_response.json())
+    # take json verison of the response and normalize it
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    # output result as a table 
+    streamlit.dataframe(fruityvice_normalized)
 
-  execpt URLError as e:
-    streamlit.error()
+execpt URLError as e:
+  streamlit.error()
 streamlit.stop()  # to avoid running the lines below due to a bug
 
 
